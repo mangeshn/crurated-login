@@ -19,7 +19,7 @@ export default function Login(){
 
     useEffect(() => {
         if (typeof window !== 'undefined') {
-            window.sessionStorage.setItem('item', 'itemValue')
+            window.sessionStorage.setItem('userData', userData)
         }
     }, [userData]);
 
@@ -43,6 +43,7 @@ export default function Login(){
                 setClassMessage("bg-success")
                 //req.session.save();
                 //res.send({ ok: true });
+                sessionStorage.setItem('isLoggedIn', true);
                 setUserData(res.data.result);
 
 
